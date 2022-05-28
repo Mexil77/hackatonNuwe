@@ -1,7 +1,9 @@
-import { Text, View, Alert, Button } from "react-native";
+import { Text, View } from "react-native";
 import Constants from "expo-constants";
 
 import InfoCard from "./InfoCard";
+import ChartCard from "./ChartCard";
+import Navbar from "./Navbar";
 
 export default function Main() {
 	return (
@@ -15,8 +17,11 @@ export default function Main() {
 			}}
 		>
 			<View style={{ width: "100%", marginBottom: 30 }}>
-				<Text>Transaction history</Text>
-				<Text>These are your monthly and daily Actions.</Text>
+				<Text style={{ fontSize: 50, color: "#670ef68d" }}>NEO BANKS</Text>
+				<Text style={{ fontSize: 30 }}>Transaction history</Text>
+				<Text style={{ fontSize: 15 }}>
+					These are your monthly and daily Actions.
+				</Text>
 			</View>
 			<View
 				style={{
@@ -28,19 +33,8 @@ export default function Main() {
 				<InfoCard title="Transations" number="35" footer="Last month" />
 				<InfoCard title="Transations" number="3" footer="Today" />
 			</View>
-			<View style={{ width: "100%", backgroundColor: "#fff", padding: 10 }}>
-				<Text style={{ marginBottom: 30 }}>Transaction Last Year</Text>
-				<View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-					<Button title="Monthly" />
-					<Button title="Daily" />
-				</View>
-				<Text>Canvas</Text>
-			</View>
-			<View>
-				<Text>Icon 1</Text>
-				<Text>Icon 2</Text>
-				<Text>Icon 3</Text>
-			</View>
+			<ChartCard />
+			<Navbar />
 		</View>
 	);
 }
